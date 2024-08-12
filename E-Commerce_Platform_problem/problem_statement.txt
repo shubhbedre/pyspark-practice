@@ -1,0 +1,70 @@
+Problem Statement: Analyzing and Optimizing Data for a Large E-commerce Platform
+
+Data Overview:
+    You are tasked with analyzing sales, customer, and product data for a large e-commerce platform. 
+    The data is highly skewed, with certain products and customers appearing disproportionately more frequently than others. 
+    You need to perform complex transformations and aggregations to derive insights that can help optimize sales strategies.
+
+Complex Schema Structure
+
+You have the following three datasets:
+
+-------------------- Sales Data (sales_data.csv) ---------------------
+
+Schema:
+    transaction_id: StringType, Unique identifier for each transaction
+    customer_id: StringType, Unique identifier for each customer
+    product_id: StringType, Unique identifier for each product
+    transaction_date: TimestampType, Date and time of the transaction
+    quantity: IntegerType, Number of units sold
+    price_per_unit: DoubleType, Price per unit of the product sold
+    discount: DoubleType, Discount applied to the transaction
+
+--------------------- Customer Data (customer_data.csv) ----------------
+
+Schema:
+    customer_id: StringType, Unique identifier for each customer
+    customer_name: StringType, Name of the customer
+    customer_email: StringType, Email of the customer
+    customer_city: StringType, City of the customer
+    customer_signup_date: TimestampType, Date when the customer signed up
+    
+---------------------- Product Data (product_data.csv) ----------------------
+
+Schema:
+    product_id: StringType, Unique identifier for each product
+    product_name: StringType, Name of the product
+    product_category: StringType, Category of the product
+    product_price: DoubleType, Standard price of the product
+    product_supplier_id: StringType, Identifier for the supplier of the product
+
+-------------------- Task Requirements ------------------------------
+
+Schema Definition: 
+        Explicitly define the schema for each dataset instead of using inferSchema.
+
+Repartitioning and Bucketing:
+    Repartition the data to handle the skew in product_id and customer_id.
+    Use bucketing on product_id and customer_id for optimized joins.
+
+Joins:
+    Perform a join between sales_data and customer_data using a broadcast join to optimize performance.
+    Join the result with product_data using a standard join.
+
+Window Functions:
+    Calculate the running total sales for each product within each month.
+    Rank customers within each city based on their total spending.
+
+Handling Data Skew:
+    Use an accumulator to track the skewed data and optimize processing.
+
+User-Defined Functions (UDFs):
+    Create a UDF to categorize transactions into "High Value" or "Low Value" based on the total amount after discounts.
+
+Data Optimization:
+    Use coalesce to reduce the number of partitions for small datasets.
+    Apply caching where necessary to optimize repetitive computations.
+
+Final Aggregations:
+    Calculate the top 5 products contributing to total revenue for each category.
+    Identify the top 3 cities with the highest customer lifetime value (CLTV).
