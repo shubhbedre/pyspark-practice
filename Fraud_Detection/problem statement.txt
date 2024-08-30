@@ -1,0 +1,59 @@
+Real-World Scenario: Fraud Detection in Financial Transactions
+Problem Statement
+You're tasked with developing a real-time fraud detection system for a financial institution. 
+The system needs to process and analyze transaction data to identify suspicious activities that could indicate fraudulent behavior. 
+The data includes historical transactions, customer profiles, and real-time streaming transaction data. 
+The goal is to create a model that flags potential fraud in real-time, while also providing detailed analytics on customer behavior 
+and transaction patterns.
+
+Data Sources:
+
+Historical Transactions: Stored in CSV format, containing past transaction data.
+Customer Profiles: Stored in JSON format, containing demographic and financial information about customers.
+Real-Time Streaming Transactions: Data in Parquet format, representing incoming transactions that need to be analyzed in real-time.
+
+Tasks:
+
+Data Ingestion:
+
+Ingest historical transactions, customer profiles, and real-time streaming transactions.
+Define complex schemas for each dataset explicitly.
+
+Data Cleaning & Preprocessing:
+
+Handle missing values in customer profiles and historical transactions.
+Normalize transaction amounts across different currencies.
+Clean up any anomalies in the data, such as duplicate transactions.
+
+Feature Engineering:
+
+Create features such as transaction frequency, average transaction amount, and time of transaction.
+Use window functions to create rolling averages and sums over time.
+Apply User-Defined Functions (UDFs) to extract features from unstructured data (e.g., transaction descriptions).
+
+Data Integration & Aggregation:
+
+Join the historical transactions with customer profiles to enrich the data.
+Aggregate transaction data at various levels (daily, weekly, monthly) to identify patterns.
+Use different types of joins (inner, left, right, full outer) to explore relationships between datasets.
+
+Real-Time Fraud Detection:
+
+Implement a streaming data pipeline to process incoming transactions.
+Apply a pre-trained machine learning model to flag suspicious transactions in real-time.
+Use accumulators to count flagged transactions and other metrics.
+
+Handling Data Skew & Optimization:
+
+Identify and address data skew in historical transactions by repartitioning and coalescing.
+Use broadcast joins and bucketing to optimize query performance.
+
+Anomaly Detection & Reporting:
+
+Identify anomalies using clustering techniques (e.g., DBSCAN).
+Generate detailed reports and visualizations to highlight suspicious activities and patterns.
+
+Saving & Storing Results:
+
+Save flagged transactions and analysis results in a Delta table for further investigation.
+Store aggregated metrics and reports in a Parquet format for efficient querying.
