@@ -1,0 +1,58 @@
+Real-World Scenario: Multi-Source Data Integration and Analysis for a Financial Institution Problem Statement
+
+You're working for a large financial institution that wants to integrate data from multiple sources to build a comprehensive customer profile. 
+
+The data comes from three different sources:
+
+Customer Transactions: A transactional database (SQL) that records all customer transactions. The data is in JSON format.
+Credit Scores: A flat file (CSV) from a third-party credit score provider that provides credit scores and other related information.
+Customer Feedback: Unstructured data from customer feedback collected via emails and social media, available in a combination of XML and free text.
+
+The goal is to create a unified customer profile by combining these datasets, performing data cleaning, 
+handling missing values, and then generating insights like customer segmentation, 
+identifying high-risk customers, and predicting potential defaulters.
+
+Data Sources:
+
+Transactions Data: Stored in JSON format.
+Credit Scores Data: Stored in CSV format.
+Customer Feedback: Combination of XML and free text.
+
+Tasks:
+
+Data Ingestion:
+
+Ingest data from all three sources.
+Explicitly define complex schemas for each data source.
+
+Data Cleaning & Handling Missing Values:
+
+Handle missing values using appropriate strategies (e.g., mean imputation for numerical data, mode imputation for categorical data).
+Normalize and clean text data from the feedback source.
+
+Data Integration:
+
+Join the datasets using different types of joins (inner, left, right, and full outer joins) based on customer ID.
+Use broadcasting and accumulators to optimize joins and aggregations.
+
+Data Aggregation & Transformation:
+
+Use window functions to calculate rolling averages of transaction amounts, and rank customers based on transaction frequency.
+Use UDFs (User-Defined Functions) to clean and process the free text in feedback.
+
+Data Partitioning & Bucketing:
+
+Repartition the data based on specific columns (e.g., customer ID).
+Implement bucketing to optimize queries on large datasets.
+
+Data Skew Handling:
+
+Identify and handle data skew in the transaction data by using coalesce and repartitioning strategies.
+Analytics & Predictions:
+
+Perform customer segmentation using clustering techniques (e.g., K-means).
+Predict potential defaulters using logistic regression or decision trees.
+
+Save the Final Data:
+
+Save the final integrated and cleaned dataset in a Delta table.
