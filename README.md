@@ -41,9 +41,12 @@ Pyspark practice problems which will cover most of the functionalities of spark.
 ## Step 4: Install Python and PySpark
 
 1. Download and install `Python 3.7.x` from the [official Python website](https://www.python.org/downloads/release/python-377/).
-2. Install PySpark using pip:
+2. Install setuptools==57.5.0 using pip:
    ```sh
-   pip install pyspark
+   pip install setuptools==57.5.0
+4. Install PySpark 2.4.8 using pip:
+   ```sh
+   pip install pyspark==2.4.8
 ## Step 5: Verify the Installation
 
 ### 1. Verify Java Installation:
