@@ -1,0 +1,12 @@
+********************************* Problem Statement *********************************
+You have a system logs dataset where each log represents an action taken by a user on a website. 
+The company wants to extract the following insights:
+
+1. User Action Sessionization: Break user activity into sessions where each session ends if the user is inactive for more than 30 minutes.
+2. Top Active Users: Identify the top 10 users who performed the most actions in a day.
+3. Session Activity Summary: For each user session, compute the following:
+    - Total number of actions taken
+    - Time spent in the session (i.e., difference between the first and last action in the session)
+4. Time Distribution Analysis: Analyze the activity across different hours of the day, aggregating actions for each user in hourly windows.
+5. Handle Data Skew: You should repartition the data based on user IDs to handle any data skew.
+6. Identify Bot-Like Behavior: Use a UDF to flag sessions where the user performs more than 100 actions within 5 minutes.
