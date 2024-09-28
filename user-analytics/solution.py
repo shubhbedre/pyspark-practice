@@ -10,7 +10,6 @@ spark = SparkSession.builder.appName("ComplexPySparkProblem").getOrCreate()
 
 # Load the logs dataset
 logs_df = spark.read.csv("/mnt/data/system_logs", header=False, inferSchema=True)
-logs_df = logs_df.selectExpr("_c0 as user_id", "_c1 as action", "_c2 as timestamp")
 
 # Parse timestamp and sort the logs
 logs_df = logs_df.withColumn("timestamp", F.col("timestamp").cast("timestamp"))
