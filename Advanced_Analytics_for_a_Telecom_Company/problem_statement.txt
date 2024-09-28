@@ -1,0 +1,36 @@
+============ Advanced Analytics for a Telecom Company ============
+Problem Statement:
+You are working for a telecom company that wants to perform advanced analytics on customer usage data to optimize 
+their plans and detect potential fraudulent activities. 
+The data comes from multiple sources with complex schemas and various formats. 
+
+Your tasks are to:
+
+1. Ingest data from different sources (CSV, JSON, and Parquet) with different formats and schemas.
+2. Perform data cleaning, handling missing values, and resolving data quality issues.
+3. Perform feature engineering to extract relevant insights such as session duration, peak usage time, and data usage patterns.
+4. Implement a fraud detection algorithm using a combination of user-defined functions (UDFs), window functions, and Spark SQL.
+5. Use advanced SQL queries for aggregation, joins, and data analysis, including repartitioning and bucketing to handle data skew.
+6. Optimize performance using broadcast joins, partitioning, bucketing, and caching.
+
+Data Sources:
+
+1. Customer Data: Information about customers (JSON format).
+2. Usage Data: Information about call, SMS, and data usage (CSV format).
+3. Billing Data: Historical billing data in Parquet format.
+
+Tasks:
+
+1. Ingest Data: Load customer data (JSON), usage data (CSV), and billing data (Parquet) with explicit schemas.
+2. Data Cleaning & Preprocessing: Handle missing values and clean anomalies in the data.
+3. Feature Engineering:
+    - Calculate session duration and peak usage times.
+    - Create features for data consumption patterns and usage frequencies.
+4. Advanced SQL Analysis:
+    - Calculate monthly bills, detect overcharges, and identify high-data users.
+    - Apply window functions to detect anomalies in usage.
+5. Fraud Detection:
+    - Use UDFs and window functions to flag suspicious customers based on their usage patterns and historical billing behavior.
+6. Optimization:
+    - Implement repartitioning and bucketing for performance optimization.
+    - Use broadcast joins to optimize the join between large datasets.

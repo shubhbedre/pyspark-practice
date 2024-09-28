@@ -1,0 +1,27 @@
+Explanation of Key Steps:
+
+1. Data Loading: CSV files are loaded with inferSchema=False to ensure proper schema handling.
+2. Handling Missing Values: Missing city values in the customers dataset are replaced with "Unknown". Missing order_amount values are replaced with 0 in the orders dataset.
+3. Joins: We performed inner joins between orders, products, and customers to get the complete data.
+4. Aggregations: We used groupBy() and aggregate functions such as sum(), count(), and avg() to compute total spending per customer, total sales per category, and order count per city.
+5. Window Functions: A ranking function was used to rank each order by its amount for each customer.
+6. Data Skew: We repartitioned the dataset based on customer_id to handle data skew and improve performance.
+7. Caching and Coalescing: Caching the dataset after repartitioning to optimize repeated access and coalescing to reduce partition numbers before saving the final result.
+
+Spark Transformations Used:
+
+- filter()
+- join()
+- groupBy()
+- agg()
+- withColumn()
+- rank() (Window Function)
+- repartition()
+- coalesce()
+- Spark Actions Used:
+- show()
+- collect()
+- write()
+
+This problem provides a real-world scenario with a high level of complexity, involving various transformations, actions, and optimization techniques, 
+helping you cover most of PySpark's core functionalities.
