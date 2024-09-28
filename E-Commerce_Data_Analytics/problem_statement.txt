@@ -1,0 +1,21 @@
+Complex Data Processing Using PySpark - E-Commerce Data Analytics
+
+In this problem, you'll be working with multiple datasets from an e-commerce platform that include orders, customers, and products. 
+Your task is to perform complex data transformations and actions to gain insights into customer purchasing behavior, product popularity, 
+and other analytical needs. The goal is to cover all major PySpark transformations and actions.
+
+Problem Statement:
+
+You are provided with three datasets:
+
+1. Customers: Information about customers (e.g., customer ID, name, city).
+2. Orders: Data about orders placed by customers (e.g., order ID, customer ID, order amount, order date).
+3. Products: Information about products (e.g., product ID, category, price).
+
+You need to:
+
+1. Analyze customer behavior to identify the top spending customers and their preferred product categories.
+2. Analyze product sales trends to understand which categories perform the best over time.
+3. Detect any missing or inconsistent data and handle it accordingly.
+4. Aggregate sales data by city and time period.
+5. Optimize your operations to handle data skew, repartitioning, and caching.
